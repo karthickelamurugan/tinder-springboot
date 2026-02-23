@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    environment:
+      - JWT_SECRET=dev-jwt-secret
+    depends_on: []
+  # Optional postgres service - default uses H2 for dev
+  # db:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: pass
+  #     POSTGRES_DB: tindermock
+  #   ports:
+  #     - "5432:5432"
